@@ -1,5 +1,14 @@
 <?php
 session_start();
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('URL??');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+        error_reporting(0);
+    }        
+}else{
 include '../../condb.php';
 $sql = "SELECT * FROM buy AS A INNER JOIN buy_detail AS B ON A.B_id = B.B_id LEFT JOIN member AS C ON A.M_id = C.id LEFT JOIN stock_product AS D ON A.P_id = D.P_id";
 $pro ="SELECT * FROM stock_product";
@@ -49,3 +58,4 @@ $product = $condb->query($pro);
 </body>
 
 </html>
+<?php } ?>

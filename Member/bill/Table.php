@@ -1,6 +1,6 @@
 <!-- <div id="content" class="p-4 p-md-5 pt-5"> -->
 <div class="card mb-4">
-    	<div class="card-header"><i class="fa fa-table mr-1"></i>ตารางจัดการข้อมูล สินค้า</div>
+    	<div class="card-header"><i class="fa fa-table mr-1"></i>ตารางข้อมูลการจองสินค้าสินค้า</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="Bookingdt" width="100%" cellspacing="0">
@@ -33,7 +33,7 @@
 			<td><?php echo $result['Bo_cus']; ?></td>
 			<td><?php echo $result['Bo_cadd']; ?></td>
 			<td><?php echo $result['Bo_ctel']; ?></td>
-			<td><?php echo $result['Bo_cget']; ?></td>
+			<td><?php echo $result['Bo_cdate']; ?></td>
 			<td><?php echo $result['Get_name']; ?></td>
             <td><a href="#" data-target="#confirmmodal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">ชำระเงินและส่งมอบแล้ว</a></td>
             <td><a href="#" data-target="#deleteModal<?php echo $result['Bo_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ยกเลิกการจอง</a></td>
@@ -57,7 +57,7 @@
 						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus'];?></p>
                         <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
 						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
-						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cget']." บาท"; ?></p>
+						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cdate']; ?></p>
 						<p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 						<input type="hidden" name="boid" value="<?php echo $result["Bo_id"];?>">
 						<input type="hidden" name="mid" value="<?php echo $result["M_id"];?>">
@@ -91,10 +91,10 @@
 						<p>จำนวน : <?php echo $result['Bo_amount']; ?></p>
 						<p>ราคารวม : <?php echo $result['Bo_total']." บาท"; ?></p>
 						<p>วันที่ : <?php echo $result['Bo_date']; ?></p>
-						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus']." ".$result['M_Lname'];?></p>
+						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus'];?></p>
                         <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
 						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
-						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cget']." บาท"; ?></p>
+						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cdate']; ?></p>
                         <p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 					</div>
 					<div class="modal-footer">

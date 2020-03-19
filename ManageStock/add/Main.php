@@ -1,5 +1,14 @@
 <?php
 session_start();
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('URL??');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+        error_reporting(0);
+    }        
+}else{
 include '../../condb.php';
 $sql = "SELECT * FROM stock_product";
 $query = $condb->query($sql);
@@ -53,3 +62,4 @@ $query = $condb->query($sql);
 </body>
 
 </html>
+<?php } ?>

@@ -1,5 +1,14 @@
 <?php
 session_start();
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('URL??');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+        error_reporting(0);
+    }        
+}else{
 require '../../control/buy/controller.php';
 $db_handle = new DBController();
 
@@ -94,3 +103,4 @@ if(!empty($_GET["action"])) {
     <script src="../../js/main.js"></script>
 </body>
 </html>
+<?php } ?>

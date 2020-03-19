@@ -91,7 +91,7 @@ $order_details .= '</table>';
 						</div>
 						<div class="form-group">
 							<label>เบอร์โทรลูกค้า</label>
-							<input class="form-control"  name="tel" id="tel" class="form-control" required></input>
+							<input type="tel" class="form-control"  name="tel" id="tel" class="form-control" required></input>
 						</div>
 						<div class="form-group">
 							<label>วันที่รับ-ส่ง</label>

@@ -14,18 +14,7 @@ LEFT JOIN buy AS F
 ON A.Bo_id = F.Bo_id
 WHERE F.Bo_id IS NULL";
 
-$bill = "SELECT * FROM booking AS A 
-INNER JOIN booking_detail AS B 
-ON A.Bo_id = B.Bo_id
-INNER JOIN get_type AS C
-ON  B.Get_type = C.Get_id
-INNER JOIN member AS D
-ON A.M_id = D.id
-INNER JOIN stock_product AS E
-ON A.P_id = E.P_id
-LEFT JOIN buy AS F
-ON A.Bo_id = F.Bo_id
-WHERE F.Bo_id IS NOT NULL";
+$bill = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE B.Bo_status = 2 ";
 $query = $condb->query($sql);
 $query2 = $condb->query($bill);
 ?>

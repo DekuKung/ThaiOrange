@@ -27,20 +27,18 @@ $seller = $_SESSION["id"];
 // echo $cdate;
 // echo $ctype;
 // echo " id :".$id;
-// echo " name :".$pname;
 // echo " quantity :".$quantity;
 // echo "price :".$price;
-// echo " total :".$total_buy;
-// echo " total Buy :".$total_price;
-
+// echo "GatDate : ".$cdate;
+// echo " total :".$item_price;
 
 $sql = "INSERT INTO `booking`(`Bo_id`, `M_id`, `P_id`) VALUES (null ,'".$seller."','".$id."')";
-$sql2 = "INSERT INTO `booking_detail`(`Bo_id`, `Bo_amount`, `Bo_total`, `Bo_date`, `Bo_cus`, `Bo_cadd`, `Bo_ctel`, `Bo_cdate`, `Bo_status`, `Get_type`) VALUES (null,[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])";
+$sql2 = "INSERT INTO `booking_detail`(`Bo_id`, `Bo_amount`, `Bo_total`, `Bo_date`, `Bo_cus`, `Bo_cadd`, `Bo_ctel`, `Bo_cdate`, `Bo_status`, `Get_type`) VALUES (null, '".$quantity."', '".$item_price."', CURDATE(), '".$cname."', '".$cadd."', '".$ctel."', '".$cdate."', 1, '".$ctype."')";
 $query = $condb->query($sql);
 $query2 = $condb->query($sql2);
 if($query){      
         if($query2){
-                $update = "UPDATE `stock_product` SET `P_unit` = (`P_unit` - '".$quantity."')  WHERE `stock_product`.`P_id` = '".$id."' ";        
+        $update = "UPDATE `stock_product` SET `P_unit` = (`P_unit` - '".$quantity."')  WHERE `stock_product`.`P_id` = '".$id."' ";        
         $querystock = $condb->query($update);
         if($querystock){
         unset($_SESSION["Booking_cart"]);

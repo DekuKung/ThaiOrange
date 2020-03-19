@@ -5,7 +5,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="Bookingdt" width="100%" cellspacing="0">
                 <thead>
-          <tr>
+        <tr>
             <th>#</th>
             <th>ผู้ขาย</th>
             <th>สินค้าที่จอง</th>
@@ -17,15 +17,13 @@
 			<th>เบอร์โทร</th>
 			<th>วันที่รับสินค้า</th>
 			<th>ประเภทการจัดส่ง</th>
-			<th>แจ้งชำระเงิน</th>
-            <th>ลบข้อมูล</th>
-          </tr>
+        </tr>
                 </thead>
                 <tbody>
 				<?php  while($result = mysqli_fetch_array($query,MYSQLI_ASSOC)) { 
 				?>
 							
-          <tr>
+        <tr>
             <td><?php echo $result['Bo_id'];?></td>
             <td><?php echo $result['M_Fname']."".$result['M_Lname']; ?></td>
             <td><?php echo $result['P_name']; ?></td>
@@ -35,77 +33,9 @@
 			<td><?php echo $result['Bo_cus']; ?></td>
 			<td><?php echo $result['Bo_cadd']; ?></td>
 			<td><?php echo $result['Bo_ctel']; ?></td>
-			<td><?php echo $result['Bo_cget']; ?></td>
+			<td><?php echo $result['Bo_cdate']; ?></td>
 			<td><?php echo $result['Get_name']; ?></td>
-			<td><a href="#" data-target="#confirmModal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">การชำระเงิน</a></td>
-            <td><a href="#" data-target="#deleteModal<?php echo $result['Bo_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ยกเลิกการจอง</a></td>
-					</tr>
-										<!-- Confirm Bill Modal HTML -->
-		<div id="confirmmodal<?php echo $result['Bo_id']; ?>" name="delete" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form method="POST" action="../../control/booking/Bill.php">
-					<div class="modal-header">
-						<h4 class="modal-title">Confirm Payment Booking</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">
-						<p>รหัสการจอง : <?php echo $result['Bo_id']; ?></p>
-                        <p>ผู้จำหน่าย : <?php echo $result['M_Fname']." ".$result['M_Lname'];?></p>
-                        <p>สินค้า : <?php echo $result['P_name']; ?></p>
-						<p>จำนวน : <?php echo $result['Bo_amount']; ?></p>
-						<p>ราคารวม : <?php echo $result['Bo_total']." บาท"; ?></p>
-						<p>วันที่ : <?php echo $result['Bo_date']; ?></p>
-						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus']." ".$result['M_Lname'];?></p>
-                        <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
-						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
-						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cget']." บาท"; ?></p>
-						<p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
-						<input type="hidden" name="boid" value="<?php echo $result["Bo_id"];?>">
-						<input type="hidden" name="pid" value="<?php echo $result["P_id"];?>">
-						<input type="hidden" name="name" value="<?php echo $result["P_name"];?>">
-						<input type="hidden" name="quantity" value="<?php echo $result["Boo_amount"];?>">
-						<input type="hidden" name="total" value="<?php echo $result["Boo_total"];?>">
-						<input type="hidden" name="price" value="<?php echo $result["P_price"];?>">
-					</div>
-					<div class="modal-footer">
-						<button type="submit" name="del" id="del" class="btn btn-success"  role="button" value="ชำระเงิน">ชำระเงิน</button>
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<!-- Delete Modal HTML -->
-	<div id="deleteModal<?php echo $result['Bo_id']; ?>" name="delete" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form method="POST">
-					<div class="modal-header">
-						<h4 class="modal-title">Confirm Delete Employee?</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">
-						<p>รหัสการจอง : <?php echo $result['Bo_id']; ?></p>
-                        <p>ผู้จำหน่าย : <?php echo $result['M_Fname']." ".$result['M_Lname'];?></p>
-                        <p>สินค้า : <?php echo $result['P_name']; ?></p>
-						<p>จำนวน : <?php echo $result['Bo_amount']; ?></p>
-						<p>ราคารวม : <?php echo $result['Bo_total']." บาท"; ?></p>
-						<p>วันที่ : <?php echo $result['Bo_date']; ?></p>
-						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus']." ".$result['M_Lname'];?></p>
-                        <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
-						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
-						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cget']." บาท"; ?></p>
-                        <p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
-					</div>
-					<div class="modal-footer">
-						<a name="del" id="del" class="btn btn-success" href="./Control/Member/Delmem.php?delid=<?php echo $result['Bo_id']; ?>" role="button" value="Delete">Delete</a>
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+		</tr>
 	<?php }?>
 			</tbody>
 			</table>

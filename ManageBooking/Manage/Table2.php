@@ -29,7 +29,7 @@
 			    <td><?php echo $rowbooking['Bo_cus']; ?></td>
 			    <td><?php echo $rowbooking['Bo_cadd']; ?></td>
 			    <td><?php echo $rowbooking['Bo_ctel']; ?></td>
-			    <td><?php echo $rowbooking['Bo_cget']; ?></td>
+			    <td><?php echo $rowbooking['Bo_cdate']; ?></td>
 			    <td><?php echo $rowbooking['Get_name']; ?></td>
 			</tr>
 	<?php

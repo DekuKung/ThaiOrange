@@ -1,6 +1,6 @@
 <!-- <div id="content" class="p-4 p-md-5 pt-5"> -->
 <div class="card mb-4">
-    	<div class="card-header"><i class="fa fa-table mr-1"></i>ตารางการจองสินค้า</div>
+    	<div class="card-header"><i class="fa fa-table mr-1"></i>ตารางข้อมูลการจองสินค้าสินค้า</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="Bookingdt" width="100%" cellspacing="0">
@@ -33,9 +33,9 @@
 			<td><?php echo $result['Bo_cus']; ?></td>
 			<td><?php echo $result['Bo_cadd']; ?></td>
 			<td><?php echo $result['Bo_ctel']; ?></td>
-			<td><?php echo $result['Bo_cget']; ?></td>
+			<td><?php echo $result['Bo_cdate']; ?></td>
 			<td><?php echo $result['Get_name']; ?></td>
-			<td><?php echo $result['type_name']; ?></td>
+			<td <?php if($result["type_id"] == 1){?> class="nobill" <?php }else{ ?> class="bill" <?php }?> ><?php echo $result['type_name']; ?></td>
 		</tr>
 	<?php }?>
 			</tbody>

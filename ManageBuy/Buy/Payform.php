@@ -1,6 +1,14 @@
 <?php
 session_start();
-
+if(!$_SESSION["status"]){
+  if(!$_SESSION["id"]){
+      echo "<script>";
+      echo "alert('URL??');";
+      echo "window.location='../../index.php';";
+      echo "</script>";
+      error_reporting(0);
+  }        
+}else{
 $total_price = 0;
 $total_buy = 0;
 $total_amount = 0;
@@ -80,7 +88,7 @@ $order_details .= '</table>';
           </div>
 					<div class="form-group md-3" method="POST">
                     <div class="input-group-append">
-                    <input type="number"name="pay" id="pay" value="0" class="form-control" min="0" pattern="" title="กรุณากรอกตัวเลข" required>
+                    <input type="number"name="pay" id="pay" value="0" class="form-control" min="0" pattern="[1234567890]" title="ตัวเลขเท่านั้น" required>
                     <div class="input-group-append">
                     <span class="input-group-text">บาท</span>
                     </div>
@@ -164,3 +172,4 @@ $order_details .= '</table>';
 </body>
 
 </html>
+  <?php } ?>

@@ -1,8 +1,17 @@
 <?php
 session_start();
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('URL??');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+        error_reporting(0);
+    }        
+}else{
 include '../../condb.php';
  $id = $_SESSION["id"];
- $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE A.M_id = '".$id."'";
+ $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE B.Bo_status = 1 AND A.M_id = '".$id."'";
 
  $query = $condb->query($sql);
  ?>
@@ -57,3 +66,4 @@ include '../../condb.php';
 </body>
 
 </html>
+<?php } ?>
