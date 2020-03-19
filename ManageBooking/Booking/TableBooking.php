@@ -1,5 +1,5 @@
 <!-- <div id="content" class="p-4 p-md-5 pt-5"> -->
-<div class="card mb-4"  method="POST">
+<div class="col-md-6"  method="POST">
 <?php  
 $product_array = $db_handle->runQuery("SELECT * FROM stock_product");
 if(!empty($product_array)) {
@@ -26,7 +26,7 @@ if(!empty($product_array)) {
 					
         			<tr>
 						<form action="./Main.php?action=add&id=<?php echo $product_array[$key]["P_id"]; ?>" method="post">
-            			<td><?php echo $product_array[$key]["P_id"];?></td>
+            			<td><img class="" src="../../pic/<?php echo $product_array[$key]["P_Image"];?>" alt="" srcset=""></td>
 						<td><?php echo $product_array[$key]["P_name"];?></td>
 						<input type="hidden" name="name" value="<?php echo $product_array[$key]["P_name"];?>">
 						<td><?php echo $product_array[$key]["P_price"]." บาท"; ?></td>

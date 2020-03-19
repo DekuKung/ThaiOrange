@@ -2,10 +2,10 @@
 session_start();
 include '../../condb.php';
  $id = $_SESSION["id"];
-$sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE A.M_id = '".$id."' AND B.Bo_status = 1";
+ $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE A.M_id = '".$id."'";
 
-$query = $condb->query($sql);
-?>
+ $query = $condb->query($sql);
+ ?>
 <!doctype html>
 <html lang="en">
 
@@ -36,7 +36,7 @@ $query = $condb->query($sql);
 <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
 <!-- Card Content  -->
-<?php include './Table_booking.php';
+<?php include './Table.php';
 ?>
     <!-- END Page Content  --></div>
     <script src="../../js/jquery.min.js"></script>

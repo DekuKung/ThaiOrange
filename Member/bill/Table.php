@@ -6,8 +6,7 @@
                     <table class="table table-bordered" id="Bookingdt" width="100%" cellspacing="0">
                 <thead>
           <tr>
-            <th>#</th>
-            <th>ผู้ขาย</th>
+		  	<th>#</th>
             <th>สินค้าที่จอง</th>
             <th>จำนวนที่จอง</th>
             <th>ราคารวม</th>
@@ -17,7 +16,7 @@
 			<th>เบอร์โทร</th>
 			<th>วันที่รับสินค้า</th>
 			<th>ประเภทการจัดส่ง</th>
-			<th>แจ้งชำระเงิน</th>
+            <th>แจ้งชำระเงิน</th>
             <th>ลบข้อมูล</th>
           </tr>
                 </thead>
@@ -26,8 +25,7 @@
 				?>
 							
           <tr>
-            <td><?php echo $result['Bo_id'];?></td>
-            <td><?php echo $result['M_Fname']."".$result['M_Lname']; ?></td>
+		  	<td><?php echo $result['Bo_id']; ?></td>
             <td><?php echo $result['P_name']; ?></td>
 			<td><?php echo $result['Bo_amount']; ?></td>
 			<td><?php echo $result['Bo_total']; ?></td>
@@ -37,10 +35,10 @@
 			<td><?php echo $result['Bo_ctel']; ?></td>
 			<td><?php echo $result['Bo_cget']; ?></td>
 			<td><?php echo $result['Get_name']; ?></td>
-			<td><a href="#" data-target="#confirmModal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">การชำระเงิน</a></td>
+            <td><a href="#" data-target="#confirmmodal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">ชำระเงินและส่งมอบแล้ว</a></td>
             <td><a href="#" data-target="#deleteModal<?php echo $result['Bo_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ยกเลิกการจอง</a></td>
 					</tr>
-										<!-- Confirm Bill Modal HTML -->
+					<!-- Delete Modal HTML -->
 		<div id="confirmmodal<?php echo $result['Bo_id']; ?>" name="delete" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -56,16 +54,17 @@
 						<p>จำนวน : <?php echo $result['Bo_amount']; ?></p>
 						<p>ราคารวม : <?php echo $result['Bo_total']." บาท"; ?></p>
 						<p>วันที่ : <?php echo $result['Bo_date']; ?></p>
-						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus']." ".$result['M_Lname'];?></p>
+						<p>ชื่อผู้สั่งจอง : <?php echo $result['Bo_cus'];?></p>
                         <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
 						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
 						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cget']." บาท"; ?></p>
 						<p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 						<input type="hidden" name="boid" value="<?php echo $result["Bo_id"];?>">
+						<input type="hidden" name="mid" value="<?php echo $result["M_id"];?>">
 						<input type="hidden" name="pid" value="<?php echo $result["P_id"];?>">
 						<input type="hidden" name="name" value="<?php echo $result["P_name"];?>">
-						<input type="hidden" name="quantity" value="<?php echo $result["Boo_amount"];?>">
-						<input type="hidden" name="total" value="<?php echo $result["Boo_total"];?>">
+						<input type="hidden" name="quantity" value="<?php echo $result["Bo_amount"];?>">
+						<input type="hidden" name="total" value="<?php echo $result["Bo_total"];?>">
 						<input type="hidden" name="price" value="<?php echo $result["P_price"];?>">
 					</div>
 					<div class="modal-footer">
@@ -82,7 +81,7 @@
 			<div class="modal-content">
 				<form method="POST">
 					<div class="modal-header">
-						<h4 class="modal-title">Confirm Delete Employee?</h4>
+						<h4 class="modal-title">Confirm Cancel Booking?</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
@@ -99,7 +98,7 @@
                         <p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 					</div>
 					<div class="modal-footer">
-						<a name="del" id="del" class="btn btn-success" href="./Control/Member/Delmem.php?delid=<?php echo $result['Bo_id']; ?>" role="button" value="Delete">Delete</a>
+						<a name="del" id="del" class="btn btn-success" href="../../control/booking/DelBooking.php?delid=<?php echo $result['M_id']; ?>" role="button" value="Delete">Delete</a>
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 					</div>
 				</form>

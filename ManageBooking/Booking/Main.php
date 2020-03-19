@@ -47,7 +47,7 @@ if(!empty($_GET["action"])) {
 <html lang="en">
 
 <head>
-    <title>Main Booking</title>
+    <title>การจองสินค้า</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -64,6 +64,12 @@ if(!empty($_GET["action"])) {
     margin: 40px 0;
     color: red;
     }
+    img{
+   	float: left;
+   	margin: 5px;
+   	width: 60px;
+   	height: 60px;
+   }
     </style>
 </head>
 
@@ -71,12 +77,12 @@ if(!empty($_GET["action"])) {
 <?php include './Sidebar.php'; ?>
 
 <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
-    <h2>การจองสินค้า</h2>
+    <div id="content" class="p-4 p-md-5 pt-5">  
+<div class="row">
 <!-- Card Buy Content  -->
 <?php include './TableBooking.php'; ?>
 <?php include './BookingForm.php'; ?>
-    <!-- END Page Content  --></div>
+    <!-- END Page Content  --></div></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="../../js/jquery.min.js"></script>
     <script src="../../js/popper.js"></script>

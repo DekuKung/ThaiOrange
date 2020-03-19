@@ -1,12 +1,33 @@
 <?php
 session_start();
 include '../../condb.php';
-$sql = "SELECT * FROM booking AS A LEFT JOIN booking_detail AS B ON A.Bo_id = B.Boo_id LEFT JOIN get_type AS C ON B.Get_type = C.Get_id INNER JOIN member AS D ON A.M_id = D.id INNER JOIN stock_product AS E ON A.P_id = E.P_id";
+$sql = "SELECT * FROM booking AS A 
+INNER JOIN booking_detail AS B 
+ON A.Bo_id = B.Bo_id
+INNER JOIN get_type AS C
+ON  B.Get_type = C.Get_id
+INNER JOIN member AS D
+ON A.M_id = D.id
+INNER JOIN stock_product AS E
+ON A.P_id = E.P_id
+LEFT JOIN buy AS F
+ON A.Bo_id = F.Bo_id
+WHERE F.Bo_id IS NULL";
+
+$bill = "SELECT * FROM booking AS A 
+INNER JOIN booking_detail AS B 
+ON A.Bo_id = B.Bo_id
+INNER JOIN get_type AS C
+ON  B.Get_type = C.Get_id
+INNER JOIN member AS D
+ON A.M_id = D.id
+INNER JOIN stock_product AS E
+ON A.P_id = E.P_id
+LEFT JOIN buy AS F
+ON A.Bo_id = F.Bo_id
+WHERE F.Bo_id IS NOT NULL";
 $query = $condb->query($sql);
-$product = "SELECT * FROM `stock_product`";
-$type = "SELECT * FROM `get_type`";
-$querypro = $condb->query($product);
-$querytype = $condb->query($type);
+$query2 = $condb->query($bill);
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,13 +45,14 @@ $querytype = $condb->query($type);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="sb-nav-fixed">
 <?php include './Sidebar.php'; ?>
 
 <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
-<!-- Card Content  -->
+<!-- Table Content  -->
 <?php include './Table.php'; ?>
+<?php include './Table2.php'; ?>
     <!-- END Page Content  --></div>
     <script src="../../js/jquery.min.js"></script>
 
@@ -46,6 +68,7 @@ $querytype = $condb->query($type);
 
     <script >
     $('#Bookingdt').DataTable();
+    $('#Billtable').DataTable();
     </script>
 </body>
 

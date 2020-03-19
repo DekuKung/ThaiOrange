@@ -18,6 +18,14 @@ $query = $condb->query($sql);
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../DataTables/datatables.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+            img{
+   	float: left;
+   	margin: 5px;
+   	width: 60px;
+   	height: 60px;
+   }
+    </style>
 </head>
 
 <body>
@@ -25,9 +33,8 @@ $query = $condb->query($sql);
 
 <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
- <!-- Table Manage Member -->
+ <!-- Table Manage Stock -->
  <?php include './Table_Stock.php'; ?>
-    <!-- END Table Member  -->
     <!-- END Page Content  --></div>
     <script src="../js/jquery.min.js"></script>
 

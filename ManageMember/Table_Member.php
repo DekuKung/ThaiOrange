@@ -22,8 +22,8 @@
             			<td><?php echo $result['M_Fname']." ".$result['M_Lname'];?></td>
             			<td><?php echo $result['M_Add']; ?></td>
 						<td><?php echo $result['M_Tel']; ?></td>
-						<td><a href="#" data-target="#editEmployeeModal<?php echo $result['id'];?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></td>
-            			<td><a href="#" data-target="#deleteEmployeeModal<?php echo $result['id']; ?>" class="delete" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
+						<td align="center"><a href="#" data-target="#editEmployeeModal<?php echo $result['id'];?>" class="btn btn btn-warning" data-toggle="modal">แก้ไขข้อมูล</a></td>
+            			<td align="center"><a href="#" data-target="#deleteEmployeeModal<?php echo $result['id']; ?>" class="btn btn btn-danger" data-toggle="modal" >ลบข้อมูล</a></td>
 
 					</tr>
 					<!-- Edit Modal HTML -->
