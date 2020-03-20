@@ -95,10 +95,10 @@
                         <p>ที่อยู่ : <?php echo $result['Bo_cadd']; ?></p>
 						<p>เบอร์ติดต่อ : <?php echo $result['Bo_ctel']; ?></p>
 						<p>วันที่ต้องจัดส่ง : <?php echo $result['Bo_cdate']; ?></p>
-                        <p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
+						<p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 					</div>
 					<div class="modal-footer">
-						<a name="del" id="del" class="btn btn-success" href="../../control/booking/DelBooking.php?delid=<?php echo $result['M_id']; ?>" role="button" value="Delete">Delete</a>
+						<a name="del" id="del" class="btn btn-success" href="../../control/booking/DelBooking.php?delid=<?php echo $result['Bo_id']; ?>" role="button" value="ยกเลิกการจองนี้">ยกเลิกการจองนี้</a>
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 					</div>
 				</form>

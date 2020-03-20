@@ -21,7 +21,7 @@
               <a href="../MainMember.php"><span class="fa fa-angle-left"></span> กลับ</a>
           </li>
           <li>
-              <a href="../bill/Main.php"><span class="fa fa-money"></span> แจ้งชำระเงิน</a>
+              <a href="../bill/Main.php"><span class="fa fa-money"></span> แจ้งชำระเงิน/ยกเลิกจอง</a>
           </li>
           <li>
               <a href="../../ManageBooking/Booking/Main.php"><span class="fa fa-shopping-cart"></span> จองสินค้า</a>

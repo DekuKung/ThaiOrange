@@ -1,7 +1,7 @@
 <div class="card">
 	<div class="card-body">
 	<div class="card-title"><h5>นำเข้าสินค้า</h5></div>
-		<!-- <form action="../../control/stock/EditPro.php" method="POST"> -->
+		<form action="../../control/stock/EditPro.php" method="POST">
 		<div class="modal-body">
 				<div class="form-group">									
 					<select name="pid" class="form-control">
