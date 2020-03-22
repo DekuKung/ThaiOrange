@@ -46,7 +46,7 @@ session_start();
         }
         else {
             echo "<script>";
-            echo "alert('Your Username and Password is Wrong');";
+            echo "alert('กรุณาตรวจสอบ Username และ Password');";
             echo "window.location='./index.php';";
             echo "</script>";
 
@@ -54,7 +54,7 @@ session_start();
     }
     else {
         echo "<script>";
-        echo "alert('Your Username and Password is Wrong');";
+        echo "alert('กรุณาตรวจสอบ Username และ Password');";
         echo "window.location='./index.php';";
         echo "</script>";
     }
