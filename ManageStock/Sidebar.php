@@ -8,23 +8,37 @@
         </nav>
         <!-- Sideabar -->
 <div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar" class="sb-sidenav accordion sb-sidenav-dark">
+<nav id="sidebar" class="sb-sidenav accordion sb-sidenav-dark">
 				<!-- <div class="custom-menu">
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	          <i class="fa fa-bars"></i>
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
         </div> -->
-	  		<h1><div class="logo"><?php echo $_SESSION["status"]; ?></div></h1>
+        <?php $stts = $_SESSION["status"];
+        $status = "Administrator";
+        if($stts=='Admin'){ ?>
+	  		<h1><div class="logo"><?php echo $status; ?></div></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="../Mainadmin.php"><span class="fa fa-home mr-3"></span> หน้าหลัก</a>
           </li>
-		    <li class="active">
-            <a href="./add/Main.php"><span class="fa fa-plus mr-3"></span> นำเข้าสินค้า</a>
+          <li class="active">
+            <a href="./create/Main.php"><span class="fa fa-plus mr-3"></span> สร้างสินค้า</a>
           </li>
           <li class="active">
-            <a href="./create/Main.php"><span class="fa fa-plus mr-3"></span> เพิ่มสินค้า</a>
+            <a href="./add/Main.php"><span class="fa fa-plus mr-3"></span> นำเข้าสินค้า</a>
           </li>
         </ul>
+        <?php }else{ ?>
+          <h1><div class="logo"><?php echo $_SESSION["Fname"]." ".$_SESSION["Lname"]; ?></div></h1>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="../Member/MainMember.php"><span class="fa fa-home mr-3"></span> หน้าหลัก</a>
+          </li>
+          <li class="active">
+            <a href="./add/Main.php"><span class="fa fa-plus mr-3"></span> นำเข้าสินค้า</a>
+          </li>
+        </ul>
+      <?php  } ?>
     	</nav>

@@ -1,5 +1,15 @@
 <?php
 session_start();
+error_reporting(0);
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('ท่านไม่มีสิทธิ์การเข้าใช้งาน');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+
+    }        
+}else{
 include '../../condb.php';
 $sql = "SELECT * FROM `get_type`";
 $query = $condb->query($sql);
@@ -191,3 +201,4 @@ $(document).ready(function(){
 </body>
 
 </html>
+<?php } ?>

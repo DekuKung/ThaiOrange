@@ -15,6 +15,7 @@ if(!empty($product_array)) {
             					<th>#</th>
 								<th>สินค้า</th>
             					<th>ราคาต่อหน่วย</th>
+								<th>ในคลัง</th>
 								<th>จำนวนที่ต้องการ</th>
                                 <th>ซื้อสินค้า</th>
           					</tr>
@@ -31,6 +32,7 @@ if(!empty($product_array)) {
 						<input type="hidden" name="name" value="<?php echo $product_array[$key]["P_name"];?>">
 						<td><?php echo $product_array[$key]["P_price"]." บาท"; ?></td>
 						<input type="hidden" name="price" value="<?php echo $product_array[$key]["P_price"];?>">
+						<td><?php echo $product_array[$key]["P_unit"]." แก้ว"; ?></td>
 						<td><input type="number" name="quantity" value="1" class="form-control" size="2" min="0"></td>
 						<td><input type="submit" value="เพิ่มลงตระกร้า" class="btn btn-sm btn-warning" /></td>
 					</form></tr>

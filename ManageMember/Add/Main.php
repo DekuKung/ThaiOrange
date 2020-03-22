@@ -3,7 +3,7 @@ session_start();
 if(!$_SESSION["status"]){
     if(!$_SESSION["id"]){
         echo "<script>";
-        echo "alert('URL??');";
+        echo "alert('ท่านไม่มีสิทธิ์การเข้าใช้งาน');";
         echo "window.location='../../index.php';";
         echo "</script>";
         error_reporting(0);

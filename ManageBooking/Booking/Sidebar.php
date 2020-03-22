@@ -17,7 +17,7 @@
         </div> -->
         <?php $stts = $_SESSION["status"];
         if($stts=='Admin'){ ?>
-	  		<h1><div class="logo"><?php echo $_SESSION["status"]; ?></div></h1>
+	  		<h1><div class="logo"><?php $status = "Administrator"; echo $status; ?></div></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="../../Mainadmin.php"><span class="fa fa-home mr-3"></span> หน้าหลัก</a>

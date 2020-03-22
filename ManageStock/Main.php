@@ -1,15 +1,17 @@
 <?php
 session_start();
+error_reporting(0);
 if(!$_SESSION["status"]){
     if(!$_SESSION["id"]){
         echo "<script>";
         echo "alert('URL??');";
         echo "window.location='../index.php';";
         echo "</script>";
-        error_reporting(0);
     }        
 }else{
 include '../condb.php';
+$id = $_SESSION["id"];
+$sttr = $_SESSION["status"];
 $sql = "SELECT * FROM stock_product";
 $query = $condb->query($sql);
 ?>
@@ -17,7 +19,7 @@ $query = $condb->query($sql);
 <html lang="en">
 
 <head>
-    <title>Main Admin</title>
+    <title>จัดการคลังสินค้า</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -43,7 +45,12 @@ $query = $condb->query($sql);
 <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
  <!-- Table Manage Stock -->
- <?php include './Table_Stock.php'; ?>
+ <?php if($sttr == 'Admin'){
+    include './Table_Stock.php'; 
+ }else{
+    include './Table_stock2.php';
+ }
+?>
     <!-- END Page Content  --></div>
     <script src="../js/jquery.min.js"></script>
 

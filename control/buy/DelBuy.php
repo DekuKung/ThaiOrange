@@ -10,38 +10,38 @@ if($querydel){
     if($sqldel2){
         if($status=='Admin'){
     echo "<script>";
-    echo "alert('ทำรายการเรียบร้อยแล้ว');";
+    echo "alert('ลบข้อมูลเสร็จสิ้น');";
     echo "window.location='../../Mainadmin.php';";
     echo "</script>";   
     }
     else {
     echo "<script>";
-    echo "alert('ทำรายการเรียบร้อยแล้ว');";
+    echo "alert('ลบข้อมูลเสร็จสิ้น');";
     echo "window.location='../../Member/MainMember.php';";
     echo "</script>";   
     }
     }else if($status=='Admin'){
         echo "<script>";
-        echo "alert('ทำรายการเรียบร้อยแล้ว');";
+        echo "alert('ไม่สามารถลบข้อมูลได้');";
         echo "window.location='../../Mainadmin.php';";
         echo "</script>";   
         }
         else {
         echo "<script>";
-        echo "alert('ทำรายการเรียบร้อยแล้ว');";
+        echo "alert('ไม่สามารถลบข้อมูลได้');";
         echo "window.location='../../Member/MainMember.php';";
         echo "</script>";   
         }  
     }
     else if($status=='Admin'){
         echo "<script>";
-        echo "alert('ทำรายการเรียบร้อยแล้ว');";
+        echo "alert('ไม่สามารถลบข้อมูลได้');";
         echo "window.location='../../Mainadmin.php';";
         echo "</script>";   
         }
         else {
         echo "<script>";
-        echo "alert('ทำรายการเรียบร้อยแล้ว');";
+        echo "alert('ไม่สามารถลบข้อมูลได้');";
         echo "window.location='../../Member/MainMember.php';";
         echo "</script>";   
         }

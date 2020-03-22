@@ -16,8 +16,7 @@
 			<th>เบอร์โทร</th>
 			<th>วันที่รับสินค้า</th>
 			<th>ประเภทการจัดส่ง</th>
-            <th>แจ้งชำระเงิน</th>
-            <th>ลบข้อมูล</th>
+            <th>การจัดการ</th>
           </tr>
                 </thead>
                 <tbody>
@@ -35,16 +34,59 @@
 			<td><?php echo $result['Bo_ctel']; ?></td>
 			<td><?php echo $result['Bo_cdate']; ?></td>
 			<td><?php echo $result['Get_name']; ?></td>
-            <td><a href="#" data-target="#confirmmodal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">ชำระเงินและส่งมอบแล้ว</a></td>
-            <td><a href="#" data-target="#deleteModal<?php echo $result['Bo_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ยกเลิกการจอง</a></td>
+            <td>
+				<a href="#" data-target="#editModal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-primary" data-toggle="modal">ชำระเงินและส่งมอบแล้ว</a>
+				<a href="#" data-target="#confirmmodal<?php echo $result['Bo_id'];?>" class="btn btn-sm btn-warning" data-toggle="modal">แก้ไขข้อมูลการจอง</a>
+				<a href="#" data-target="#deleteModal<?php echo $result['Bo_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ยกเลิกการจอง</a>
+			</td>
 					</tr>
+										<!-- Edit Modal HTML -->
+	<div id="editModal<?php echo $result['Bo_id'];?>" class="modal fade" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form method="POST" action="#">
+					<div class="modal-header">
+						<h4 class="modal-title">แก้ไขข้อมูลพนักงาน</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+					<div class="form-group">
+						<label>รหัส</label>
+						<input  type="text" value="<?php echo $result['id'];?>" name="mid" id="mid" class="form-control" readonly required>
+					</div>
+						<div class="form-group">
+							<label>ชื่อ</label>
+							<input type="text" value="<?php echo $result['M_Fname'];?>" name="Fname" id="Fname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>นามสกุล</label>
+							<input type="text" value="<?php echo $result['M_Lname'];?>" name="Lname" id="Lname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>ที่อยู่</label>
+							<input class="form-control" value="<?php echo $result['M_Add'];?>" name="Add" id="Add" class="form-control" required></input>
+						</div>
+						<div class="form-group">
+							<label>เบอร์โทร</label>
+							<input type="text" value="<?php echo $result['M_Tel'];?>" name="Phone" id="Phone" class="form-control" required>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="ยกเลิก">
+						<input type="submit" class="btn btn-success" value="แก้ไข">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--End Edit Modal -->
 					<!-- Delete Modal HTML -->
 		<div id="confirmmodal<?php echo $result['Bo_id']; ?>" name="delete" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form method="POST" action="../../control/booking/Bill.php">
 					<div class="modal-header">
-						<h4 class="modal-title">Confirm Payment Booking</h4>
+						<h4 class="modal-title">ยืนยันการชำระเงินและส่งมอบจากพนักงาน</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
@@ -81,7 +123,7 @@
 			<div class="modal-content">
 				<form method="POST">
 					<div class="modal-header">
-						<h4 class="modal-title">Confirm Cancel Booking?</h4>
+						<h4 class="modal-title">ยืนยัน การยกเลิกจองสินค้า</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
@@ -98,7 +140,7 @@
 						<p>ประเภทการจัดส่ง : <?php echo $result['Get_name']; ?></p>
 					</div>
 					<div class="modal-footer">
-						<a name="del" id="del" class="btn btn-success" href="../../control/booking/DelBooking.php?delid=<?php echo $result['Bo_id']; ?>" role="button" value="ยกเลิกการจองนี้">ยกเลิกการจองนี้</a>
+						<a name="del" id="del" class="btn btn-danger" href="../../control/booking/DelBooking.php?delid=<?php echo $result['Bo_id']; ?>" role="button" value="ยกเลิกการจองนี้">ยกเลิกการจองนี้</a>
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 					</div>
 				</form>

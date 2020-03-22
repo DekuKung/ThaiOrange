@@ -15,7 +15,8 @@
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
         </div> -->
-	  		<h1><div class="logo">Admin</div></h1>
+        <?php $status = 'Administator'; ?>
+	  		<h1><div class="logo"><?php echo $status; ?></div></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="../Main.php"><span class="fa fa-home mr-3"></span> กลับไปหน้าการจัดการ</a>

@@ -1,12 +1,12 @@
 <?php
 session_start();
+error_reporting(0);
 if(!$_SESSION["status"]){
     if(!$_SESSION["id"]){
         echo "<script>";
         echo "alert('URL??');";
         echo "window.location='../../index.php';";
-        echo "</script>";
-        error_reporting(0);
+        echo "</script>";     
     }        
 }else{
 include '../../condb.php';
@@ -17,7 +17,7 @@ $query = $condb->query($sql);
 <html lang="en">
 
 <head>
-    <title>Main Admin</title>
+    <title> นำเข้าสินค้า</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../../../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

@@ -1,5 +1,15 @@
 <?php
 session_start();
+error_reporting(0);
+if(!$_SESSION["status"]){
+    if(!$_SESSION["id"]){
+        echo "<script>";
+        echo "alert('ท่านไม่มีสิทธิ์การเข้าใช้งาน');";
+        echo "window.location='../../index.php';";
+        echo "</script>";
+
+    }        
+}else{
 require '../../control/buy/controller.php';
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -91,3 +101,4 @@ if(!empty($_GET["action"])) {
 </body>
 
 </html>
+<?php } ?>

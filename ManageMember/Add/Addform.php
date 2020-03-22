@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" class="btn btn-success" value="Save Change">
+						<input type="submit" class="btn btn-success" value="เพิ่มพนักงาน">
 					</div>
 
 </form>
