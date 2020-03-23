@@ -15,21 +15,30 @@
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
         </div> -->
-	  		<h1><div class="logo"><?php $status = "Administrator"; echo $status; ?></div></h1>
+	  		<h1><div class="logo"><?php echo $_SESSION["status"]; ?></div></h1>
         <ul class="list-unstyled components mb-5">
-          <li class="active">
+          <li>
               <a href="./ManageMember/Main.php"><span class="fa fa-user-circle mr-3"></span> จัดการสมาชิก</a>
           </li>
-          <li class="active">
+          <li>
               <a href="./ManageBuy/Manage/Main.php"><span class="fa fa-book mr-3"></span> จัดการซื้อสินค้าหน้าร้าน</a>
           </li>
-          <li class="active">
+          <li>
             <a href="./ManageBooking/Manage/Main.php"><span class="fa fa-book mr-3"></span> จัดการจองสินค้า</a>
           </li>
-          <li class="active">
+          <li>
             <a href="./ManageStock/Main.php"><span class="fa fa-archive mr-3"></span> การจัดการคลังสินค้า</a>
           </li>
-          <li class="active">
+          <li>
+            <a href="ManageMaterial/"><span class="fa fa-archive mr-3"></span> การจัดการคลังวัสดุ</a>
+          </li>
+          <li>
+            <a href="./ManageDurableArticles/"><span class="fa fa-archive mr-3"></span> การจัดการคลังครุภัณฑ์</a>
+          </li>
+          <li>
+              <a href="./ManageDealer/"><span class="fa fa-user-circle mr-3"></span> จัดการผู้จำหน่าย</a>
+          </li>
+          <li>
             <a href="./Report/Main.php"><span class="fa fa-file mr-3"></span> รายงาน</a>
           </li>
           <!-- <li>
