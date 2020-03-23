@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Main Admin</title>
+    <title>เข้าสู่ระบบ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -26,8 +26,8 @@
 
           <fieldset class="clearfix">
 
-            <p ><span class="fa fa-user"></span><input type="text" name="username"  Placeholder="Username" required ></p> <!-- JS because of IE support; better: placeholder="Username" -->
-            <p><span class="fa fa-lock"></span><input type="password" name="password"  Placeholder="Password" pattern="(?=.*\d)(?=.*[a-z]).{8,}" title="กรุณาตรวจสอบ Username และ Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+            <p ><span class="fa fa-user"></span><input type="text" name="username"  Placeholder="Username" pattern="(?=.*[a-z]).{4-10}" oninvalid="this.setCustomValidity('กรุณากรอก ชื่อผู้ใช่ หรือ อักษรชื่อผู้ใข้ไม่ถูกต้อง')" required ></p> <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fa fa-lock"></span><input type="password" name="password"  Placeholder="Password" pattern="(?=.*\d)(?=.*[a-z]).{6-10}" oninvalid="this.setCustomValidity('กรุณากรอก รหัสผ่าน หรือ อักษร รหัสผ่านไม่ถูกต้อง')" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
             
              <div>
                                 <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Login"></span>

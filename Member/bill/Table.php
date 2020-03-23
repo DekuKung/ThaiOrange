@@ -75,7 +75,7 @@
 	<div id="editModal<?php echo $rowbooking['Bo_id']; ?>" name="delete" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form method="POST" action="../../control/booking/Editbooking.php">
+				<!-- <form method="POST" action="../../control/booking/Editbooking.php"> -->
 					<div class="modal-header">
 						<h4 class="modal-title">แก้ไขข้อมูลลูกค้า/ผู้สั่งจอง</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -83,23 +83,23 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="Boid">รหัสการจอง</label>
-							<input id="Boid" class="form-control" type="text" name="boid" value="<?php echo $rowbooking["Bo_id"] ?>" required readonly>
+							<input id="Boid" class="form-control" type="text" name="boid" value="<?php echo $rowbooking["Bo_id"] ?>" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required readonly>
 						</div>
 						<div class="form-group">
 							<label for="cusname">ชื่อลูกค้า</label>
-							<input id="cusname" class="form-control" type="text" name="cname" value="<?php echo $rowbooking["Bo_cus"] ?>" required >
+							<input id="cusname" class="form-control" type="text" name="cname" value="<?php echo $rowbooking["Bo_cus"] ?>" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required >
 						</div>
 						<div class="form-group">
 							<label for="address">ที่อยู่</label>
-							<input id="address" class="form-control" type="text" name="cadd" value="<?php echo $rowbooking["Bo_cadd"] ?>" required >
+							<input id="address" class="form-control" type="text" name="cadd" value="<?php echo $rowbooking["Bo_cadd"] ?>" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required >
 						</div>
 						<div class="form-group">
 							<label for="ctel">เบอร์โทร</label>
-							<input id="ctel" class="form-control" type="tel" name="ctel" value="<?php echo $rowbooking["Bo_ctel"] ?>" pattern="[0-9]{10}" title="Telephone" required >
+							<input id="ctel" class="form-control" type="tel" name="ctel" value="<?php echo $rowbooking["Bo_ctel"] ?>" pattern="[0-9]{10}" title="Telephone" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required>
 						</div>
 						<div class="form-group">
 							<label for="getdate">วันที่ต้องการรับสินค้า</label>
-							<input id="getdate" class="form-control" type="date" name="getdate" value="<?php echo $rowbooking["Bo_cdate"] ?>" required >
+							<input id="getdate" class="form-control" type="date" name="getdate" value="<?php echo $rowbooking["Bo_cdate"] ?>" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required >
 						</div>
 					</div>
 					<div class="modal-footer">
