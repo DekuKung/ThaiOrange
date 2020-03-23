@@ -5,11 +5,11 @@
 		<div class="modal-body">
 						<div class="form-group">
 							<label>ชื่อ</label>
-							<input type="text"  name="Fname" id="Fname" class="form-control" pattern="[ก-๙]{25}" required>
+							<input type="text"  name="Fname" id="Fname" class="form-control" pattern="^[ก-๏\s]+$" required>
 						</div>
 						<div class="form-group">
 							<label>นามสกุล</label>
-							<input type="text"  name="Lname" id="Lname" class="form-control" pattern="[ก-๙]{25}" required>
+							<input type="text"  name="Lname" id="Lname" class="form-control" pattern="^[ก-๏\s]+$" required>
 						</div>
 						<div class="form-group">
 							<label>ที่อยู่</label>
@@ -17,19 +17,19 @@
 						</div>
 						<div class="form-group">
 							<label>เบอร์ติดต่อ</label>
-							<input type="number"  name="Phone" id="Phone" class="form-control" pattern="[1234567890]{10}" title="กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข" required>
+							<input type="number"  name="Phone" id="Phone" class="form-control" pattern="^[1234567890]{10}" title="กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข" required>
 						</div>
 						<div class="form-group">
 							<label>ชื่อผู้ใช้</label>
-							<input class="form-control"  name="user" id="user" class="form-control" pattern="[[a-z0-9]{4}" required></input>
+							<input class="form-control"  name="user" id="user" class="form-control" pattern="(?=.*[a-z]).{4-10}" required></input>
 						</div>
 						<div class="form-group">
 							<label>รหัสผ่าน</label>
-							<input type="text"  name="pass" id="pass" class="form-control" pattern="[[a-z0-9]{6}" required>
+							<input type="text"  name="pass" id="pass" class="form-control" pattern="(?=.*\d)(?=.*[a-z]).{6-10}" required>
 						</div>
 						<div class="form-group">
 							<label>รหัสประชาชน</label>
-							<input type="number"  name="idcard" id="idcard" class="form-control" pattern="[1234567890]{13}" title="กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก" required>
+							<input type="number"  name="idcard" id="idcard" class="form-control" pattern="^[1234567890]{13}" title="กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก" required>
 						</div>
 					</div>
 					<div class="modal-footer">
