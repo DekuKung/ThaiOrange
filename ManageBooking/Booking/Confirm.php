@@ -91,7 +91,7 @@ $order_details .= '</table>';
 					<h4 class="form-title">รายละเอียด</h4>
           </div>
 					<div class="form-group md-3">
-                        <div class="form-group">
+            <div class="form-group">
 							<label>ชื่อลูกค้า</label>
 							<input type="text"  name="cname" id="cname" class="form-control" pattern="[ก-๙]{25}" required>
 						</div>

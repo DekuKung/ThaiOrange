@@ -15,9 +15,16 @@ $del1 = "DELETE FROM booking_detail WHERE Bo_id = '".$id."' ";
 $del2 = "DELETE FROM booking WHERE Bo_id = '".$id."' ";
 $query1 = $condb->query($del1);
 $query2 = $condb->query($del2);
+if($quantity >= 50){
+    $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`+ 4) WHERE mstock_id = 3";    
+}
+else {
+    $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`+ 2) WHERE mstock_id = 3"; 
+}
 if($query1){
     if($query2){
         $queryupdate = $condb->query($updatestock);
+        $updateM = $condb->query($mat);
         echo "<script>";
         echo "alert('ยกเลิกสินค้าเสร็จสิ้น');";
         echo "window.location='../../Member/bill/Main.php';";
