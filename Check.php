@@ -19,10 +19,9 @@ session_start();
     $password = $_POST['password'];
     $protectuser = $condb->real_escape_string($username);
     $protectpass = $condb->real_escape_string($password);
-    $realuser = md5($protectuser);
     $realpassword = md5($protectpass);
 
-    $sql = "SELECT * FROM member WHERE M_User = '".$realuser."' AND M_Pass = '".$realpassword."' ";
+    $sql = "SELECT * FROM member WHERE M_User = '".$protectuser."' AND M_Pass = '".$realpassword."' ";
     $query = $condb->query($sql);
     $result = mysqli_fetch_array($query,MYSQLI_ASSOC);
     if($result) {
