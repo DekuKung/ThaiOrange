@@ -41,6 +41,14 @@ if ($stts=='Admin'){
     <link rel="stylesheet" href="../DataTables/datatables.css">
     <link rel="stylesheet" href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+            img{
+   	float: center;
+   	margin: 5px;
+   	width: 70px;
+   	height: 70px;
+   }
+    </style>
 </head>
 
 <body class="sb-nav-fixed">

@@ -15,7 +15,7 @@
                 	<tbody>
 						<?php while($result = mysqli_fetch_array($stockquery,MYSQLI_ASSOC)) { ?>
         			<tr>
-            			<td><?php echo $result['P_id'];?></td>
+            			<td align="center"><img src="../pic/<?php echo $result["P_Image"]; ?>" alt="" srcset=""></td>
             			<td><?php echo $result['P_name']; ?></td>
 						<td><?php echo $result['P_unit']; ?></td>
 						<td><?php echo $result['P_add_history_date']; ?></td>

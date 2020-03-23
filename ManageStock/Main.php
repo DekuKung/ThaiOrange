@@ -59,8 +59,6 @@ $query = $condb->query($sql);
     <script src="../js/main.js"></script>
 
     <script src="../js/popper.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     
     <script src="../js/bootstrap.min.js"></script>
     

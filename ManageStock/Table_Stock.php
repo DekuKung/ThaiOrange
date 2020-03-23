@@ -23,10 +23,9 @@
 						<td><?php echo $result['P_price']; ?></td>
 						<td><?php echo $result['P_add_history_date']; ?></td>
             			<td align="center"><a href="#" data-target="#deleteProModal<?php echo $result['P_id']; ?>" class="btn btn btn-danger" data-toggle="modal" >ลบสินค้านี้</a></td>
-
 					</tr>					
 	<!-- Delete Modal HTML -->
-	<div id="deleteProModal<?php echo $result['P_id']; ?>" name="delete" class="modal fade">
+	<div id="deleteProModal<?php echo $result['P_id']; ?>" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form method="POST">

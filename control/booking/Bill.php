@@ -9,11 +9,11 @@ $Pid = $_POST["pid"];
 $quantity = $_POST["quantity"];
 $total = $_POST["total"];
 
-echo "Bo_id ".$boid." ,";
-echo "M_id ".$Mid." ,";
-echo "P_id ".$Pid." ,";
-echo "Bo_amount ".$quantity." ,";
-echo "Bo_total ".$total;
+// echo "Bo_id ".$boid." ,";
+// echo "M_id ".$Mid." ,";
+// echo "P_id ".$Pid." ,";
+// echo "Bo_amount ".$quantity." ,";
+// echo "Bo_total ".$total;
 
 $sqlbuy = "INSERT INTO `buy`(`B_id`, `M_id`, `P_id`, `Bo_id`) VALUES (null,'".$Mid."', '".$Pid."', '".$boid."')";
 $sqlbuydetail = "INSERT INTO `buy_detail`(`B_id`, `B_amount`, `B_total`, `B_date`) VALUES (null,'".$quantity."', '".$total."', CURDATE())";

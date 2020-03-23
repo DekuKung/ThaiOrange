@@ -12,8 +12,9 @@ if(!$_SESSION["status"]){
 include '../../condb.php';
  $id = $_SESSION["id"];
  $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE B.Bo_status = 1 AND A.M_id = '".$id."'";
-
  $query = $condb->query($sql);
+ $get = "SELECT * FROM get_type";
+ $qget = $condb->query($get);
  ?>
 <!doctype html>
 <html lang="en">
@@ -28,7 +29,7 @@ include '../../condb.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../DataTables/datatables.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
     .no-records {
     text-align: center;
@@ -41,22 +42,19 @@ include '../../condb.php';
 
 <body class="sb-nav-fixed">
 <?php include './Sidebar.php'; ?>
-
 <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
 <!-- Card Content  -->
-<?php include './Table.php';
-?>
+<?php include './Table.php';?>
     <!-- END Page Content  --></div>
     <script src="../../js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
     <script src="../../DataTables/datatables.min.js" crossorigin="anonymous"></script>
 
     <script src="../../js/main.js"></script>
 
     <script src="../../js/popper.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     
     <script src="../../js/bootstrap.min.js"></script>
 

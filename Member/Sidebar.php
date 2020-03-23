@@ -21,7 +21,7 @@
             <a href="../ManageBuy/Buy/Main.php"><span class="fa fa-shopping-cart mr-3"></span> หน้าการขายสินค้า</a>
             </li>
           <li class="active">          
-              <a href="./booking/Main_booking.php"><span class="fa fa-book mr-3"></span> การจองสินค้าและชำระเงิน</a>
+              <a href="./booking/Main_booking.php"><span class="fa fa-book mr-3"></span> การจองสินค้า/ชำระเงิน</a>
           </li>
           <li class="active">          
               <a href="../ManageStock/Main.php"><span class="fa fa-archive mr-3"></span> การจัดการนำเข้าสินค้า</a>
