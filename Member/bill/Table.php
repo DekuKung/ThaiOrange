@@ -87,7 +87,7 @@
 						</div>
 						<div class="form-group">
 							<label for="cusname">ชื่อลูกค้า</label>
-							<input id="cusname" class="form-control" type="text" name="cname" value="<?php echo $rowbooking["Bo_cus"] ?>" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required >
+							<input id="cusname" class="form-control" type="text" name="cname" value="<?php echo $rowbooking["Bo_cus"] ?>" pattern="[ก-๙]{25}" oninvalid="this.setCustomValidity('กรุณากรอกอักษรไม่ถูกต้อง')" oninput="setCustomValidity('')" required >
 						</div>
 						<div class="form-group">
 							<label for="address">ที่อยู่</label>

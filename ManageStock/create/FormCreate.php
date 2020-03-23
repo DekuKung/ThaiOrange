@@ -5,7 +5,7 @@
 		<div class="modal-body">
         <div class="form-group">
 					<label>ชื่อสินค้า</label>
-					<input type="text"  name="pname" id="pname" class="form-control" min="0" pattern="[z-aA-Z]{25}" title="ตัวอักษรเท่านั้น" required>
+					<input type="text"  name="pname" id="pname" class="form-control" min="0" pattern="[ก-๙]{25}" title="ตัวอักษรเท่านั้น" required>
 				</div>
 				<div class="form-group">
 					<label>จำนวน</label>

@@ -43,11 +43,11 @@
 					</div>
 						<div class="form-group">
 							<label>ชื่อ</label>
-							<input type="text" value="<?php echo $result['M_Fname'];?>" name="Fname" id="Fname" class="form-control" required>
+							<input type="text" value="<?php echo $result['M_Fname'];?>" name="Fname" id="Fname" class="form-control" pattern="[ก-๙]{25}" required>
 						</div>
 						<div class="form-group">
 							<label>นามสกุล</label>
-							<input type="text" value="<?php echo $result['M_Lname'];?>" name="Lname" id="Lname" class="form-control" required>
+							<input type="text" value="<?php echo $result['M_Lname'];?>" name="Lname" id="Lname" class="form-control" pattern="[ก-๙]{25}" required>
 						</div>
 						<div class="form-group">
 							<label>ที่อยู่</label>
@@ -55,7 +55,7 @@
 						</div>
 						<div class="form-group">
 							<label>เบอร์โทร</label>
-							<input type="text" value="<?php echo $result['M_Tel'];?>" name="Phone" id="Phone" class="form-control" required>
+							<input type="text" value="<?php echo $result['M_Tel'];?>" name="Phone" id="Phone" class="form-control" pattern="[0-9]{10}" required>
 						</div>
 					</div>
 					<div class="modal-footer">

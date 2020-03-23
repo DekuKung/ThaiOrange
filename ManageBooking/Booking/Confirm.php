@@ -93,7 +93,7 @@ $order_details .= '</table>';
 					<div class="form-group md-3">
                         <div class="form-group">
 							<label>ชื่อลูกค้า</label>
-							<input type="text"  name="cname" id="cname" class="form-control" required>
+							<input type="text"  name="cname" id="cname" class="form-control" pattern="[ก-๙]{25}" required>
 						</div>
 						<div class="form-group">
 							<label>ที่อยู่ลูกค้า</label>
@@ -101,7 +101,7 @@ $order_details .= '</table>';
 						</div>
 						<div class="form-group">
 							<label>เบอร์โทรลูกค้า</label>
-							<input type="tel" class="form-control"  name="tel" id="tel" class="form-control" required></input>
+							<input type="tel" class="form-control"  name="tel" id="tel" class="form-control" pattern="[0-9]{10}" required></input>
 						</div>
 						<div class="form-group">
 							<label>วันที่รับ-ส่ง</label>
