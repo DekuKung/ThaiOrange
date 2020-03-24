@@ -28,10 +28,10 @@ $unit = $result["P_unit"];
 // echo "P_unit : ".$unit;
 
 if($quantity > $unit){
-
+        $alert =  "ไม่สามารถทำรายการได้เนื่องจาก"." ".$result["P_name"];
         unset($_SESSION["cart_item"]);
         echo "<script>";
-        echo "alert('ไม่สามารถทำรายการได้เนื่องจำนวนสินค้าไม่เพียงพอ');";
+        echo "alert('$alert');";
         echo "window.location='../../ManageBuy/Buy/Main.php';";
         echo "</script>";
         echo "NO";

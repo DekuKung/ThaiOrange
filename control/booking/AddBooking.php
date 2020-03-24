@@ -39,9 +39,10 @@ $unit = $result["P_unit"];
 // echo "P_unit :".$unit;
 
 if($quantity > $unit){
+        $alert =  "ไม่สามารถทำรายการได้เนื่องจาก"." ".$result["P_name"];
         unset($_SESSION["Booking_cart"]);
         echo "<script>";
-        echo "alert('ไม่สามารถทำรายการได้เนื่องจำนวนสินค้าไม่เพียงพอ');";
+        echo "alert('$alert');";
         echo "window.location='../../Member/booking/Main_booking.php';";
         echo "</script>";
 }
