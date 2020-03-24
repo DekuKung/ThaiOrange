@@ -33,7 +33,7 @@ if(!empty($product_array)) {
 						<td><?php echo $product_array[$key]["P_price"]." บาท"; ?></td>
 						<input type="hidden" name="price" value="<?php echo $product_array[$key]["P_price"];?>">
 						<td><?php echo $product_array[$key]["P_unit"]." แก้ว"; ?></td>
-						<td><input type="number" name="quantity" value="1" class="form-control" size="2" min="0" pattern="[1234567890]" title="ตัวเลขเท่านั้น" required></td>
+						<td><input type="number" name="quantity" value="1" class="form-control" size="2" min="1" pattern="[1234567890]" title="ตัวเลขเท่านั้น" required></td>
 						<td><input type="submit" value="เพิ่มลงตระกร้า" class="btn btn-sm btn-warning" /></td>
 					</form></tr>
 				<?php 
