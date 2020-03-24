@@ -49,10 +49,10 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
-						<p>รหัสการซื้อ : <?php echo $result['Bo_id']; ?></p>
-                        <p>ชื่อผู้ซื้อ : <?php echo $result['Bo_cus'];?></p>
-                        <p>สินค้าที่ซื้อ : <?php echo $result['P_name']; ?></p>
-						<p>จำนวนที่ซื้อ : <?php echo $result['Bo_amount']; ?></p>
+						<p>รหัสการจอง : <?php echo $result['Bo_id']; ?></p>
+                        <p>ชื่อผู้จอง : <?php echo $result['Bo_cus'];?></p>
+                        <p>สินค้าที่จอง : <?php echo $result['P_name']; ?></p>
+						<p>จำนวนที่จอง : <?php echo $result['Bo_amount']; ?></p>
 						<p>ราคารวม : <?php echo $result['Bo_total']; ?></p>
 						<p>วันที่จอง : <?php echo $result['Bo_date']; ?></p>
 						<p>ประเภทการรับสินค้า : <?php echo $result['Get_name']; ?></p>

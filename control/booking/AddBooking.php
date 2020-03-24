@@ -58,10 +58,10 @@ if($quantity >= 50){
         $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`- 2) WHERE mstock_id = 3"; 
     }
 if($query){      
-        if($query2){                       
-                if($querystock){
-                        $querystock = $condb->query($update);
-                        $updateM = $condb->query($mat);
+        if($query2){
+                $querystock = $condb->query($update);
+                $updateM = $condb->query($mat);                       
+                if($querystock){       
                         unset($_SESSION["Booking_cart"]);
                         echo "<script>";
                         echo "alert('ทำการจองเสร็จสิ้น');";
