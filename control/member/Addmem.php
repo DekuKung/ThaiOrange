@@ -21,17 +21,18 @@ $idcard = $_POST["idcard"];
 $check = "SELECT * FROM member";
 $qcheck = $condb->query($check);
 while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
-        if($username == $result["M_User"]){
-                // echo "ซ้ำ";
-                echo "<script";
-                echo "alert('ชื่อผู้ใช้ นี้มีอยู่ในระบบแล้ว');";
-                echo "window.location='../../ManageMember/Main.php';";
-                echo "</script>";
-        break;
-        }else if($idcard == $result["ID_card"]){
+        if($idcard == $result["ID_card"]){
                 // echo "ซ้ำ";
                 echo "<script";
                 echo "alert('รหัสประจำตัวประชาชนนี่มีอยู่ในระบบแล้ว');";
+                echo "window.location='../../ManageMember/Main.php';";
+                echo "</script>";
+        break;
+        } 
+        else if($username == $result["M_User"]){
+                // echo "ซ้ำ";
+                echo "<script";
+                echo "alert('ชื่อผู้ใช้ นี้มีอยู่ในระบบแล้ว');";
                 echo "window.location='../../ManageMember/Main.php';";
                 echo "</script>";
         break;
@@ -53,6 +54,6 @@ while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
                 }
         break;        
         }
-
 }
+
 ?>
