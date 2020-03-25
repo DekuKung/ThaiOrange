@@ -88,7 +88,7 @@ $order_details .= '</table>';
           </div>
 					<div class="form-group md-3" method="POST">
                     <div class="input-group-append">
-                    <input type="number"name="pay" id="pay" value="0" class="form-control" min="0" pattern="[1234567890]{7}" title="ตัวเลขเท่านั้น" required>
+                    <input type="text"name="pay" id="pay" value="0" class="form-control" min="0" pattern="[0-9]{7}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูลและกรอกตัวเลขเท่านั้น')" title="ตัวเลขเท่านั้น"  required>
                     <div class="input-group-append">
                     <span class="input-group-text">บาท</span>
                     </div>
