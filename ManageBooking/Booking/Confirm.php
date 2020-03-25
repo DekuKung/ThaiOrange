@@ -93,22 +93,22 @@ $order_details .= '</table>';
 					<div class="form-group md-3">
             <div class="form-group">
 							<label>ชื่อลูกค้า</label>
-							<input type="text"  name="cname" id="cname" class="form-control" pattern="^[ก-๏\s]+$" required>
+							<input type="text"  name="cname" id="cname" class="form-control" pattern="^[ก-๏\s]+$" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาไทยเท่านั้น')" required>
 						</div>
 						<div class="form-group">
 							<label>ที่อยู่ลูกค้า</label>
-							<input type="text"  name="address" id="address" class="form-control" required>
+							<input type="text"  name="address" id="address" class="form-control" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาไทยเท่านั้น')" required>
 						</div>
 						<div class="form-group">
 							<label>เบอร์โทรลูกค้า</label>
-							<input type="tel" class="form-control"  name="tel" id="tel" class="form-control" pattern="[0-9]{10}" required></input>
+							<input type="tel" class="form-control"  name="tel" id="tel" class="form-control" pattern="^[0]{1}[689]{1}[0-9]{7,}" oninvalid="this.setCustomValidity('กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข โดยขึ้นต้นด้วย 08 หรือ 06 หรือ 09')" required></input>
 						</div>
 						<div class="form-group">
 							<label>วันที่รับ-ส่ง</label>
-							<input type="Date"  name="date" id="date" class="form-control" required>
+							<input type="Date"  name="date" id="date" class="form-control" oninvalid="this.setCustomValidity('กรุณาเลือกวันที่')" required>
                         </div>
                     <label>ประเภทการส่ง</label>
-                    <select class="form-control" name="type" id="type" required>
+                    <select class="form-control" name="type" id="type" required oninvalid="this.setCustomValidity('กรุณาเลือก')">
                     
 						<option value="" required><-- Please Select Item --></option>
                     <?php while($productarray = mysqli_fetch_array($query,MYSQLI_ASSOC)) { ?>

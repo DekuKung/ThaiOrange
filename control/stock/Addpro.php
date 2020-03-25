@@ -27,19 +27,20 @@ while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
         $sql = "INSERT INTO `stock_product`(`P_id`, `P_name`, `P_unit`, `P_price`, `P_add_history_date`, `P_Image`) VALUES (null, '".$name."', '".$quantity."', '".$price."', CURDATE(), '".$img."')";
         // echo $sql;
         // echo $_SESSION["status"];
+        $query = $condb->query($sql);
         if($query){
-            $query = $condb->query($sql);
             echo "<script>";
             echo "alert('เพิ่มสินค้าเสร็จสิ้น');";
             echo "window.location='../../ManageStock/Main.php';";
             echo "</script>";
+            break;
         }else{
             echo "<script>";
             echo "alert('ไม่สามารถเพิ่มสินค้าได้');";
             echo "window.location='../../ManageStock/Main.php';";
             echo "</script>";
+            break;
         }
-        break;
     }
 }
 

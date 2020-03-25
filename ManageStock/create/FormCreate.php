@@ -5,7 +5,7 @@
 		<div class="modal-body">
         <div class="form-group">
 					<label>ชื่อสินค้า</label>
-					<input type="text"  name="pname" id="pname" class="form-control" pattern="^[ก-๏\s]+$" title="ตัวอักษรเท่านั้น" required>
+					<input type="text"  name="pname" id="pname" class="form-control" pattern="^[ก-๏\s]+$" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาไทยเท่านั้น')" title="ตัวอักษรเท่านั้น" required>
 				</div>
 				<div class="form-group">
 					<label>จำนวน</label>
