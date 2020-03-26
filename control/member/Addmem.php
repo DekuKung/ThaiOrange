@@ -27,7 +27,7 @@ while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
         // echo $idcard;
         if($_POST["user"] == $result["M_User"]){
                 echo "<script>";
-                echo "alert('ข้อมูลนี้มีอยู่ในระบบแล้ว');";
+                echo "alert('ชื่อผู้ใช้มรอยู่ในระบบแล้ว กรุณาใช้ชื่ออื่น');";
                 echo "window.location='../../ManageMember/Main.php';";
                 echo "</script>";
                 break;
@@ -35,7 +35,7 @@ while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
         }
         else if($_POST["idcard"] == $result["ID_card"]){
                 echo "<script>";
-                echo "alert('ข้อมูลนี้มีอยู่ในระบบแล้ว');";
+                echo "alert('รหัส ปปช. นี้มีในระบบแล้ว');";
                 echo "window.location='../../ManageMember/Main.php';";
                 echo "</script>";
                 break;
@@ -48,7 +48,7 @@ $sql = "INSERT INTO `member`(`id`, `M_Fname`, `M_Lname`, `ID_card`, `M_User`, `M
                 $query = $condb->query($sql);
                 if($query){
                         echo "<script>";
-                        echo "alert('เพิ่มพนักงานเรียบร้อยแล้ว');";
+                        echo "alert('เพิ่มผู้ใช้งานเรียบร้อยแล้ว');";
                         echo "window.location='../../ManageMember/Main.php';";
                         echo "</script>";
                 }else{

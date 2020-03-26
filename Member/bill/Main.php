@@ -59,7 +59,7 @@ include '../../condb.php';
     <script src="../../js/bootstrap.min.js"></script>
 
     <script >
-    $('#Bookingdt').DataTable();
+    $('#Billtable').DataTable();
     </script>
 </body>
 

@@ -25,15 +25,15 @@
 						</div>
 						<div class="form-group">
 							<label>รหัสผ่าน</label>
-							<input type="text"  name="pass" id="pass" class="form-control" pattern="(?=.*\d)(?=.*[a-z]).{6-8}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาอังกฤษเล็กผสมตัวเลขเท่านั้น')" required>
+							<input type="password"  name="pass" id="pass" class="form-control" pattern="(?=.*\d)(?=.*[a-z]).{6-8}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาอังกฤษเล็กผสมตัวเลขเท่านั้น')" required>
 						</div>
 						<div class="form-group">
-							<label>รหัสประชาชน</label>
+							<label>รหัสประจำตัวประชาชน</label>
 							<input type="text"  name="idcard" id="idcard" class="form-control" pattern="[0-9]{13}" title="กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก" oninvalid="this.setCustomValidity('กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก')"  required>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" class="btn btn-success" value="เพิ่มพนักงาน">
+						<input type="submit" class="btn btn-success" value="เพิ่มผู้ใช้งาน">
 					</div>
 
 </form>

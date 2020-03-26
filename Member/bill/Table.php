@@ -33,9 +33,9 @@
 			    <td><?php echo $rowbooking['Bo_cdate']; ?></td>
 				<td><?php echo $rowbooking['Get_name']; ?></td>
 				<td align="center">
-					<a href="#" data-target="#confirmModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-success" data-toggle="modal" >ชำระเงิน/ส่งมอบเสร็จสิ้น</a>
-					<a href="#" data-target="#editModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-warning" data-toggle="modal" >แก้ไขข้อมูลลูกค้า</a>
-					<a href="#" data-target="#deleteModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-danger" data-toggle="modal" >ยกเลิกการจอง</a>
+					<a href="#" data-target="#confirmModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-success" data-toggle="modal" title="แจ้งการชำระเงินและส่งมอบ" >แจ้ง</a>
+					<a href="#" data-target="#editModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-warning" data-toggle="modal" title="แก้ไขข้อมูลลูกค้า" >แก้ไข</a>
+					<a href="#" data-target="#deleteModal<?php echo $rowbooking['Bo_id']; ?>" class="btn btn btn-danger" data-toggle="modal" title="ยกเลิกการจองสินค้า" >ยกเลิก</a>
 				</td>
 			</tr>
 	<!-- Confirm Modal HTML -->
@@ -44,7 +44,7 @@
 			<div class="modal-content">
 				<form method="POST" action="../../control/booking/Bill.php">
 					<div class="modal-header">
-						<h4 class="modal-title">ยืนยันการชำระเงินและส่งมอบ</h4>
+						<h4 class="modal-title">แจ้งและยืนยันการชำระเงินและส่งมอบ</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">

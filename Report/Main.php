@@ -12,7 +12,6 @@ if(!$_SESSION["status"]){
 include '../condb.php';
 $stock = "SELECT * FROM stock_product";
 $stockquery = $condb->query($stock);
-$totalbuy = "";
 $stts = $_SESSION["status"];
 $id = $_SESSION["id"];
 if ($stts=='Admin'){
@@ -22,7 +21,7 @@ if ($stts=='Admin'){
     $query = $condb->query($sql);
 }else{
     $totalbuy = "SELECT * FROM buy AS A INNER JOIN buy_detail AS B ON A.B_id = B.B_id INNER JOIN stock_product AS C ON A.P_id = C.P_id WHERE A.M_id = '".$id."' AND B.B_date = CURDATE() ";
-    $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE B.Bo_status = 1 AND A.M_id = '".$id."'";
+    $sql = "SELECT * FROM booking AS A INNER JOIN booking_detail AS B ON A.Bo_id = B.Bo_id INNER JOIN booking_type AS C ON B.Bo_status = C.type_id INNER JOIN Get_Type AS D ON B.Get_type = D.Get_id INNER JOIN member AS E ON A.M_id = E.id INNER JOIN stock_product AS F ON A.P_id = F.P_id WHERE B.Bo_status = 2 AND A.M_id = '".$id."'";
     $querytotal = $condb->query($totalbuy);
     $query = $condb->query($sql);
 }
