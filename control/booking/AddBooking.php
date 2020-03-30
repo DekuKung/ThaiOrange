@@ -39,45 +39,50 @@ $unit = $result["P_unit"];
 // echo "P_unit :".$unit;
 
 if($quantity > $unit){
+        $alert =  "ไม่สามารถทำรายการได้เนื่องจาก"." ".$result["P_name"];
         unset($_SESSION["Booking_cart"]);
         echo "<script>";
-        echo "alert('ไม่สามารถทำรายการได้เนื่องจำนวนสินค้าไม่เพียงพอ');";
+        echo "alert('$alert');";
         echo "window.location='../../Member/booking/Main_booking.php';";
         echo "</script>";
 }
 else{
 $sql = "INSERT INTO `booking`(`Bo_id`, `M_id`, `P_id`) VALUES (null ,'".$seller."','".$id."')";
 $sql2 = "INSERT INTO `booking_detail`(`Bo_id`, `Bo_amount`, `Bo_total`, `Bo_date`, `Bo_cus`, `Bo_cadd`, `Bo_ctel`, `Bo_cdate`, `Bo_status`, `Get_type`) VALUES (null, '".$quantity."', '".$item_price."', CURDATE(), '".$cname."', '".$cadd."', '".$ctel."', '".$cdate."', 1, '".$ctype."')";
+$update = "UPDATE `stock_product` SET `P_unit` = (`P_unit` - '".$quantity."')  WHERE `stock_product`.`P_id` = '".$id."' ";
 $query = $condb->query($sql);
 $query2 = $condb->query($sql2);
+if($quantity >= 50){
+        $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`- 4) WHERE mstock_id = 3";    
+    }
+    else {
+        $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`- 2) WHERE mstock_id = 3"; 
+    }
 if($query){      
         if($query2){
-        $update = "UPDATE `stock_product` SET `P_unit` = (`P_unit` - '".$quantity."')  WHERE `stock_product`.`P_id` = '".$id."' ";        
-        $querystock = $condb->query($update);
-        if($querystock){
-        unset($_SESSION["Booking_cart"]);
-        echo "<script>";
-        echo "alert('ทำการจองเสร็จสิ้น');";
-        echo "window.location='../../Member/booking/Main_booking.php';";
-        echo "</script>";   
+                $querystock = $condb->query($update);
+                $updateM = $condb->query($mat);                       
+                if($querystock){       
+                        unset($_SESSION["Booking_cart"]);
+                        echo "<script>";
+                        echo "alert('ทำการจองเสร็จสิ้น');";
+                        echo "window.location='../../Member/booking/Main_booking.php';";
+                        echo "</script>";   
+                }else {
+                        unset($_SESSION["Booking_cart"]);
+                        echo "<script>";
+                        echo "alert('ไม่สามารถจองสินค้าได้');";
+                        echo "window.location='../../Member/booking/Main_booking.php';";
+                        echo "</script>";   
+                }
+        }else {
+                unset($_SESSION["Booking_cart"]);
+                echo "<script>";
+                echo "alert('ไม่สามารถจองสินค้าได้');";
+                echo "window.location='../../Member/booking/Main_booking.php';";
+                echo "</script>";   
         }
-        else {
-        unset($_SESSION["Booking_cart"]);
-        echo "<script>";
-        echo "alert('ไม่สามารถจองสินค้าได้');";
-        echo "window.location='../../Member/booking/Main_booking.php';";
-        echo "</script>";   
-        }
-}else {
-        unset($_SESSION["Booking_cart"]);
-        echo "<script>";
-        echo "alert('ไม่สามารถจองสินค้าได้');";
-        echo "window.location='../../Member/booking/Main_booking.php';";
-        echo "</script>";   
-}
-}
-        
-else  {
+}else  {
         unset($_SESSION["Booking_cart"]);
         echo "<script>";
         echo "alert('ไม่สามารถจองสินค้าได้');";

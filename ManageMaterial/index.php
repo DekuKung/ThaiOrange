@@ -13,7 +13,7 @@ if (!$_SESSION["id"]) {
 
     // ฟังก์ชันนับปี พ.ศ.ป
     $now = new \DateTime('now');
-    $year = $now->format('Y');
+    $year = $now->format('Y')-1;
 
     // ฟังก์ชันนับวัน
     $d = cal_days_in_month(CAL_GREGORIAN, $month, $year);

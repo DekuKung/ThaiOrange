@@ -7,7 +7,7 @@
 				<div class="form-group row">
 					<label for="pname" class="col-sm-3 col-form-label">ชื่อ</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="dl_fname" name="dl_fname" required>
+						<input type="text" class="form-control" id="dl_fname" name="dl_fname" maxlength="50" pattern="[ก-๙a-zA-Z]{1,}" title="กรุณากรอก ก-ฮ,a-z,A-Z " required>
 						<div class="invalid-feedback">
 							กรุณากรอกชื่อ
 						</div>
@@ -16,7 +16,7 @@
 				<div class="form-group row">
 					<label for="pname" class="col-sm-3 col-form-label">นามสกุล</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="dl_lname" name="dl_lname" required>
+						<input type="text" class="form-control" id="dl_lname" name="dl_lname" maxlength="50" pattern="[ก-๙a-zA-Z]{1,}" title="กรุณากรอก ก-ฮ,a-z,A-Z " required>
 						<div class="invalid-feedback">
 							กรุณากรอกนามสกุล
 						</div>

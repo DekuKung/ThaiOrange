@@ -8,7 +8,7 @@
 				<div class="form-group row">
 					<label for="pname" class="col-sm-3 col-form-label">ชนิดครุภัณฑ์</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="dastock_name" name="dastock_name" value="<?php echo $row['dastock_name']; ?>" required>
+						<input type="text" class="form-control" id="dastock_name" name="dastock_name" value="<?php echo $row['dastock_name']; ?>" pattern="[ก-๙a-zA-Z]{1,}" title="กรุณากรอก ก-ฮ, a-z และตัวอักษร A-Z" required>
 						<input type="hidden" id="dastock_name_old" name="dastock_name_old" value="<?php echo $row['dastock_name']; ?>" required>
 						<div class="invalid-feedback">
 							กรุณากรอกชนิดครุภัณฑ์

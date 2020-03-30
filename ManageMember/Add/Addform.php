@@ -5,11 +5,11 @@
 		<div class="modal-body">
 						<div class="form-group">
 							<label>ชื่อ</label>
-							<input type="text"  name="Fname" id="Fname" class="form-control" pattern="[ก-๙]{25}" required>
+							<input type="text"  name="Fname" id="Fname" class="form-control" pattern="^[ก-๏\s]+${3,25}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาไทยเท่านั้น')" required>
 						</div>
 						<div class="form-group">
 							<label>นามสกุล</label>
-							<input type="text"  name="Lname" id="Lname" class="form-control" pattern="[ก-๙]{25}" required>
+							<input type="text"  name="Lname" id="Lname" class="form-control" pattern="^[ก-๏\s]+${3,25}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาไทยเท่านั้น')" required>
 						</div>
 						<div class="form-group">
 							<label>ที่อยู่</label>
@@ -17,23 +17,23 @@
 						</div>
 						<div class="form-group">
 							<label>เบอร์ติดต่อ</label>
-							<input type="number"  name="Phone" id="Phone" class="form-control" pattern="[1234567890]{10}" title="กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข" required>
+							<input type="text"  name="Phone" id="Phone" class="form-control" pattern="^[0]{1}[689]{1}[0-9]{7,}" title="กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข" oninvalid="this.setCustomValidity('กรุณากรอกเบอร์โทรติดต่อ 10 ตัวเลข โดยขึ้นต้นด้วย 08 หรือ 06 หรือ 09')" required>
 						</div>
 						<div class="form-group">
 							<label>ชื่อผู้ใช้</label>
-							<input class="form-control"  name="user" id="user" class="form-control" pattern="[[a-z0-9]{4}" required></input>
+							<input class="form-control"  name="user" id="user" class="form-control" pattern="(?=.*[a-z]).{4-10}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาอังกฤษเล็กเท่านั้น')" required></input>
 						</div>
 						<div class="form-group">
 							<label>รหัสผ่าน</label>
-							<input type="text"  name="pass" id="pass" class="form-control" pattern="[[a-z0-9]{6}" required>
+							<input type="password"  name="pass" id="pass" class="form-control" pattern="(?=.*\d)(?=.*[a-z]).{6-8}" oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล ภาษาอังกฤษเล็กผสมตัวเลขเท่านั้น')" required>
 						</div>
 						<div class="form-group">
-							<label>รหัสประชาชน</label>
-							<input type="number"  name="idcard" id="idcard" class="form-control" pattern="[1234567890]{13}" title="กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก" required>
+							<label>รหัสประจำตัวประชาชน</label>
+							<input type="text"  name="idcard" id="idcard" class="form-control" pattern="[0-9]{13}" title="กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก" oninvalid="this.setCustomValidity('กรุณากรอกตัวเลขบัตรประชาชน 13 หลัก')"  required>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" class="btn btn-success" value="เพิ่มพนักงาน">
+						<input type="submit" class="btn btn-success" value="เพิ่มผู้ใช้งาน">
 					</div>
 
 </form>

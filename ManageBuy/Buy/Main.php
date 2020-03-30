@@ -10,12 +10,23 @@ if(!$_SESSION["status"]){
 
     }        
 }else{
+include '../../condb.php';
 require '../../control/buy/controller.php';
 $db_handle = new DBController();
-
+$check = "SELECT * FROM stock_product WHERE P_id = '".$_GET["id"]."' ";
+$qcheck = $condb->query($check);
+$result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC);
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
         case "add":
+            if($_POST["quantity"] > $result["P_unit"]){
+                echo "<script>";
+                echo "window.alert('สินค้าในคลังไม่เพียงพอ');";
+                echo "</script>";
+                unset($_SESSION["cart_item"]);
+            break;
+            }
+            else{
             if(!empty($_POST["quantity"])) {
                 $productByCode = $db_handle->runQuery("SELECT * FROM stock_product WHERE P_id = '".$_GET["id"]."' ");
                 $itemArray = array($productByCode[0]["P_id"]=>array('name'=>$productByCode[0]["P_name"], 'id'=>$productByCode[0]["P_id"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["P_price"],));
@@ -37,6 +48,7 @@ if(!empty($_GET["action"])) {
                 $_SESSION["cart_item"] = $itemArray;
             }
         }
+    }
         break;
         case "remove":
             if(!empty($_SESSION["cart_item"])) {

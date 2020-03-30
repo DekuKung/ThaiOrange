@@ -22,6 +22,21 @@ ON A.B_id = B.B_id
 INNER JOIN stock_product AS C
 ON A.P_id = C.P_id WHERE A.M_id = '".$id."' ";
 $querytotal = $condb->query($totalbuy);
+$sqlstock = "SELECT * FROM stock_product";
+$qchecks = $condb->query($sqlstock);
+while ($rows = mysqli_fetch_array($qchecks,MYSQLI_ASSOC)){
+    if($rows["P_unit"] < 10){
+        $alertst = "ตอนนี้ ".$rows["P_name"]." เหลือแค่ ".$rows["P_unit"]." แก้ว กรุณาเติมสินค้า";
+        echo "<script>";
+        echo "alert('$alertst');";
+        echo "</script>";
+}else if($rows["P_unit" == 0]){
+        $alert = "ตอนนี้ ".$rows["P_name"]." หมดแล้ว ";
+        echo "<script>";
+        echo "alert('$alert');";
+        echo "</script>";
+}
+}
 ?>
 <!doctype html>
 <html lang="en">

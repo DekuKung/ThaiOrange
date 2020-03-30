@@ -8,7 +8,7 @@
 				<div class="form-group row">
 					<label for="pname" class="col-sm-3 col-form-label">ชื่อสินค้า</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_name" name="mstock_name" value="<?php echo $row['mstock_name']; ?>" required>
+						<input type="text" class="form-control" id="mstock_name" name="mstock_name" value="<?php echo $row['mstock_name']; ?>" maxlength="75" pattern="[ก-๙a-zA-Z1-9]{1,}" title="กรุณากรอก ก-ฮ, a-z และตัวอักษร A-Z" required>
 						<input type="hidden" id="mstock_name_old" name="mstock_name_old" value="<?php echo $row['mstock_name']; ?>" required>
 						<div class="invalid-feedback">
 							กรุณากรอกชื่อสินค้า
@@ -18,7 +18,7 @@
 				<div class="form-group row">
 					<label for="loation" class="col-sm-3 col-form-label">ที่จัดเก็บสินค้า</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_location" name="mstock_location" rows="4" value="<?php echo $row['mstock_location']; ?>" required></input>
+						<input type="text" class="form-control" id="mstock_location" name="mstock_location" value="<?php echo $row['mstock_location']; ?>" required></input>
 						<div class="invalid-feedback">
 							กรุณากรอกที่จัดเก็บสินค้า
 						</div>
@@ -27,7 +27,7 @@
 				<div class="form-group row">
 					<label for="loation" class="col-sm-3 col-form-label">ระยะเวลาในการจัดส่ง</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_waittime" name="mstock_waittime" rows="4" onKeyUp="IsNumeric(this.value,this)" value="<?php echo $row['mstock_waittime']; ?>" required></input>
+						<input type="text" class="form-control" id="mstock_waittime" name="mstock_waittime" onKeyUp="IsNumeric(this.value,this)" value="<?php echo $row['mstock_waittime']; ?>" maxlength="5" pattern="[1-9]{1,5}" title="กรุณากรอกตัวเลข 0-9" required></input>
 						<div class="invalid-feedback">
 							กรุณากรอกระยะเวลาในการจัดส่ง
 						</div>

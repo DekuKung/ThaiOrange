@@ -7,7 +7,7 @@
 				<div class="form-group row">
 					<label for="pname" class="col-sm-3 col-form-label">ชื่อสินค้า</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_name" name="mstock_name" required>
+						<input type="text" class="form-control" id="mstock_name" name="mstock_name" maxlength="75" pattern="[ก-๙a-zA-Z]{1,}" title="กรุณากรอก ก-ฮ, a-z และอักษร A-Z" required>
 						<div class="invalid-feedback">
 							กรุณากรอกชื่อสินค้า
 						</div>
@@ -16,7 +16,7 @@
 				<div class="form-group row">
 					<label for="loation" class="col-sm-3 col-form-label">ที่จัดเก็บสินค้า</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_location" name="mstock_location" rows="4" required></input>
+						<input type="text" class="form-control" id="mstock_location" name="mstock_location" required></input>
 						<div class="invalid-feedback">
 							กรุณากรอกที่จัดเก็บสินค้า
 						</div>
@@ -25,7 +25,7 @@
                 <div class="form-group row">
 					<label for="loation" class="col-sm-3 col-form-label">ระยะเวลาในการจัดส่ง</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" id="mstock_waittime" name="mstock_waittime" rows="4"onKeyUp="IsNumeric(this.value,this)" required></input>
+						<input type="text" class="form-control" id="mstock_waittime" name="mstock_waittime" onKeyUp="IsNumeric(this.value,this)" maxlength="5" required></input>
 						<div class="invalid-feedback">
 							กรุณากรอกระยะเวลาในการจัดส่ง
 						</div>

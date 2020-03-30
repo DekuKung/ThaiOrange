@@ -147,10 +147,14 @@ if (!$_SESSION["id"]) {
                     <td>ปี : </td>
                     <td>
                         <select class="form-control" name='year' id='year'>
-                            <option value='2020'>2020</option>
-                            <option value='2019'>2019</option>
-                            <option value='2018'>2018</option>
-                            <option value='2017'>2017</option>
+                            <option value=''>- ทุกปี -</option>
+                            <?PHP
+                            $sql_year = "SELECT DISTINCT year(mt_buydate) AS YEAR FROM `material_order` WHERE mt_buydate GROUP BY mt_buydate ASC";
+                            $result_year = $condb->query($sql_year);
+                            while ($row = $result_year->fetch_assoc()) {
+                            ?>
+                                <option value='<?php echo $row['YEAR']; ?>'><?php echo $row['YEAR']; ?></option>
+                            <?PHP } ?>
                         </select>
                     </td>
                     <td>เดือน : </td>

@@ -41,7 +41,7 @@
 					</div>
 					<div class="modal-footer">
 						<a name="del" id="del" class="btn btn-danger" href="../control/stock/DelPro.php?delid=<?php echo $result['P_id']; ?>" role="button" value="Delete">ยืนยัน</a>
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="ยกเลิก">
 					</div>
 				</form>
 			</div>

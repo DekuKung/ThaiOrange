@@ -15,6 +15,21 @@ $sql = "SELECT * FROM buy AS A INNER JOIN buy_detail AS B ON A.B_id = B.B_id INN
 $today = "SELECT A.id , A.M_Fname, A.M_Lname, A.M_Add, A.M_Tel, C.B_date, COUNT(B.B_id) AS Total, SUM(C.B_total) AS Totalbuy FROM member AS A LEFT JOIN buy AS B ON A.id = B.M_id INNER JOIN buy_detail AS C ON B.B_id = C.B_id WHERE C.B_date = CURDATE()";
 $query = $condb->query($sql);
 $querytoday = $condb->query($today);
+$sqlstock = "SELECT * FROM stock_product";
+$qchecks = $condb->query($sqlstock);
+while ($rows = mysqli_fetch_array($qchecks,MYSQLI_ASSOC)){
+    if($rows["P_unit"] == 0){
+        $alert = "ตอนนี้ ".$rows["P_name"]." หมดแล้ว ";
+        echo "<script>";
+        echo "alert('$alert');";
+        echo "</script>";
+}else if($rows["P_unit"] < 10){
+        $alert = "ตอนนี้ ".$rows["P_name"]." เหลือแค่ ".$rows["P_unit"]." แก้ว กรุณาเติมสินค้า";
+        echo "<script>";
+        echo "alert('$alert');";
+        echo "</script>";
+}
+}
 // totalBuy
 $sqltotalbuy = "SELECT COUNT(A.B_id) AS Totalbuy FROM buy AS A";
 $totalbuy = $condb->query($sqltotalbuy);
