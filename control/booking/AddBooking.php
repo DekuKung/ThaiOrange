@@ -52,7 +52,14 @@ $sql2 = "INSERT INTO `booking_detail`(`Bo_id`, `Bo_amount`, `Bo_total`, `Bo_date
 $update = "UPDATE `stock_product` SET `P_unit` = (`P_unit` - '".$quantity."')  WHERE `stock_product`.`P_id` = '".$id."' ";
 $query = $condb->query($sql);
 $query2 = $condb->query($sql2);
-if($quantity >= 50){
+$sql3 = "SELECT * FROM material_stock AS A WHERE A.mstock_id = 3";
+$query3 = $condb->query($sql3);
+$result3 = mysqli_fetch_array($query3,MYSQLI_ASSOC);
+$quantityMet = $result3["mstock_amount"];
+if($quantity > $quantityMet){
+        $mat = "UPDATE `material_stock` SET `mstock_amount`= 0 WHERE mstock_id = 3";
+}
+else if($quantity >= 50){
         $mat = "UPDATE `material_stock` SET `mstock_amount`= (`mstock_amount`- 4) WHERE mstock_id = 3";    
     }
     else {

@@ -30,16 +30,14 @@ while( $result = mysqli_fetch_array($qcheck,MYSQLI_ASSOC)){
                 echo "alert('ชื่อผู้ใช้มรอยู่ในระบบแล้ว กรุณาใช้ชื่ออื่น');";
                 echo "window.location='../../ManageMember/Main.php';";
                 echo "</script>";
-                break;
-                die;    
+                exit();  
         }
         else if($_POST["idcard"] == $result["ID_card"]){
                 echo "<script>";
                 echo "alert('รหัส ปปช. นี้มีในระบบแล้ว');";
                 echo "window.location='../../ManageMember/Main.php';";
                 echo "</script>";
-                break;
-                die; 
+                exit();
         }
 }
 $sql = "INSERT INTO `member`(`id`, `M_Fname`, `M_Lname`, `ID_card`, `M_User`, `M_Pass`, `M_Add`, `M_Tel`, `M_Status`)

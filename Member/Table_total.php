@@ -11,7 +11,6 @@
                                 <th>จำนวนที่ซื้อ</th>
                                 <th>ราคารวม</th>
                                 <th>วันเดือนปี ที่ซื้อ</th>
-								<th>ลบการซื้อขาย</th>
           					</tr>
                 		</thead>
                 	<tbody>
@@ -22,7 +21,6 @@
                         <td><?php echo $row['B_amount']; ?></td>
                         <td><?php echo $row['B_total']; ?></td>
                         <td><?php echo $row['B_date']; ?></td>
-						<td align="center"><a href="#" data-target="#deleteModal<?php echo $row['B_id']; ?>" class="btn btn-sm btn-danger" data-toggle="modal" >ลบการซื้อขาย</a></td>
 					</tr>
 					<!-- Delete Modal HTML -->
 	<div id="deleteModal<?php echo $row['B_id']; ?>" name="delete" class="modal fade">
